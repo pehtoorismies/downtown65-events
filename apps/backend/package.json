@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "find-deadcode": "ts-prune --ignore 'src/functions|src/appsync.gen.ts|src/test/global-setup.ts'",
+    "typecheck": "tsc --noEmit",
+    "test": "PINO_LOG_LEVEL=error sst bind vitest run",
+    "clean": "rm -rf dist .turbo node_modules"
+  },
+  "dependencies": {
+    "@trpc/server": "11.1.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 4.7.0"
+  },
+  "packageManager": "yarn@4.7.0"
+}

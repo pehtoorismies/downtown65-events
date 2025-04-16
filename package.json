@@ -1,0 +1,26 @@
+{
+  "name": "cloudflare-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "4.20250414.0",
+    "sst": "3.13.10"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 4.7.0"
+  },
+  "packageManager": "yarn@4.7.0"
+}
