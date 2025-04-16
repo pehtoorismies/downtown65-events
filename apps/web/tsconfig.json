@@ -1,12 +1,13 @@
 {
-  "extends": "@downtown65-app/config-ts/ts-packages.json",
+  "extends": "@downtown65-app/config-ts/ts-package.json",
   "compilerOptions": {
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "types": ["@cloudflare/workers-types"]
   },
   "include": ["."],
-  "exclude": ["build", "node_modules", "dist"]
+  "exclude": ["build", "node_modules", "dist"],
 }

@@ -16,7 +16,8 @@
       "**/*.sst.config.*",
       "**/generated/**",
       "**/build/**",
-      "**/.cache/**"
+      "**/.cache/**",
+      ".pnp.*"
     ]
   },
   "formatter": {

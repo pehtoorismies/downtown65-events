@@ -3,22 +3,22 @@
 export default $config({
   app(input) {
     return {
-      name: "cloudflare-test",
-      removal: input?.stage === "production" ? "retain" : "remove",
-      protect: ["production"].includes(input?.stage),
-      home: "cloudflare",
-    };
+      name: 'cloudflare-test',
+      removal: input?.stage === 'production' ? 'retain' : 'remove',
+      protect: ['production'].includes(input?.stage),
+      home: 'cloudflare',
+    }
   },
   async run() {
-    const trpc = new sst.cloudflare.Worker("Trpc", {
+    const trpc = new sst.cloudflare.Worker('Trpc', {
       url: true,
-      handler: "apps/backend/src/index.ts",
-    });
+      handler: 'apps/backend/src/index.ts',
+    })
 
-    const client = new sst.cloudflare.Worker("Client", {
+    new sst.cloudflare.Worker('Client', {
       url: true,
       link: [trpc],
-      handler: "apps/web/src/client.ts",
-    });
+      handler: 'apps/web/src/client.ts',
+    })
   },
-});
+})

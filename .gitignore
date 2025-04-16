@@ -3,7 +3,7 @@
 .sst/
 .env
 .yarn/
- node_modules/
+node_modules/
 .pnp.loader.mjs
 .pnp.cjs
 **/sst-env.d.ts

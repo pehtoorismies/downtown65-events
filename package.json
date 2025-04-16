@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write",
+    "versions": "yarn dlx sherif@1.4.0"
   },
   "keywords": [],
   "author": "",

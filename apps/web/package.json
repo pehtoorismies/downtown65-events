@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@downtown65-app/web",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -11,11 +11,14 @@
     "clean": "rm -rf dist .turbo node_modules"
   },
   "dependencies": {
+    "@downtown65-app/backend": "workspace:^",
     "@trpc/client": "11.1.0",
     "@trpc/server": "11.1.0",
     "sst": "3.13.10"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "4.20250416.0",
+    "@downtown65-app/config-ts": "workspace:^",
     "typescript": "5.8.3"
   },
   "engines": {

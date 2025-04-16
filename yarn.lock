@@ -103,11 +103,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@downtown65-app/config-ts@workspace:packages/config-ts":
+"@cloudflare/workers-types@npm:4.20250416.0":
+  version: 4.20250416.0
+  resolution: "@cloudflare/workers-types@npm:4.20250416.0"
+  checksum: 10c0/80dff10f08388cf345f6fa48532775cae18ed4ccc9092bdc65421291c9f60b2e97069312a0c84f43f490084bc847f9aee8a4273e5c905b6762110391a39f0b98
+  languageName: node
+  linkType: hard
+
+"@downtown65-app/backend@workspace:^, @downtown65-app/backend@workspace:apps/backend":
+  version: 0.0.0-use.local
+  resolution: "@downtown65-app/backend@workspace:apps/backend"
+  dependencies:
+    "@cloudflare/workers-types": "npm:4.20250416.0"
+    "@downtown65-app/config-ts": "workspace:^"
+    "@trpc/server": "npm:11.1.0"
+    typescript: "npm:5.8.3"
+    zod: "npm:3.24.2"
+  languageName: unknown
+  linkType: soft
+
+"@downtown65-app/config-ts@workspace:^, @downtown65-app/config-ts@workspace:packages/config-ts":
   version: 0.0.0-use.local
   resolution: "@downtown65-app/config-ts@workspace:packages/config-ts"
   dependencies:
     "@tsconfig/node22": "npm:22.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@downtown65-app/web@workspace:apps/web":
+  version: 0.0.0-use.local
+  resolution: "@downtown65-app/web@workspace:apps/web"
+  dependencies:
+    "@cloudflare/workers-types": "npm:4.20250416.0"
+    "@downtown65-app/backend": "workspace:^"
+    "@downtown65-app/config-ts": "workspace:^"
+    "@trpc/client": "npm:11.1.0"
+    "@trpc/server": "npm:11.1.0"
+    sst: "npm:3.13.10"
+    typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -204,16 +237,6 @@ __metadata:
   checksum: 10c0/4381256692eaf7e34878b6fe6c01b6d3a0cfe4f012ba09f8c33af9dc84a34c6396da9a478a0518873c74ed13b8b608f8d3c5d8e19c16dabe06f3aba83e5ac5bb
   languageName: node
   linkType: hard
-
-"backend@workspace:apps/backend":
-  version: 0.0.0-use.local
-  resolution: "backend@workspace:apps/backend"
-  dependencies:
-    "@trpc/server": "npm:11.1.0"
-    typescript: "npm:5.8.3"
-    zod: "npm:3.24.2"
-  languageName: unknown
-  linkType: soft
 
 "base64-js@npm:^1.0.2":
   version: 1.5.1
@@ -1280,17 +1303,6 @@ __metadata:
   checksum: 10c0/f15d588d79f3675135ba783c91a4083dcd290a2a5be9fcb6514220a1634e23df116847b1cc51f66bfb0644cf9353b2abb7815ae499bab06e46dd33c1a6bf1f4f
   languageName: node
   linkType: hard
-
-"web@workspace:apps/web":
-  version: 0.0.0-use.local
-  resolution: "web@workspace:apps/web"
-  dependencies:
-    "@trpc/client": "npm:11.1.0"
-    "@trpc/server": "npm:11.1.0"
-    sst: "npm:3.13.10"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
 
 "which-typed-array@npm:^1.1.16, which-typed-array@npm:^1.1.2":
   version: 1.1.19
