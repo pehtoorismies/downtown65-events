@@ -10,15 +10,9 @@ export default $config({
     }
   },
   async run() {
-    const trpc = new sst.cloudflare.Worker('Trpc', {
+    new sst.cloudflare.Worker('Trpc', {
       url: true,
       handler: 'apps/backend/src/index.ts',
-    })
-
-    new sst.cloudflare.Worker('Client', {
-      url: true,
-      link: [trpc],
-      handler: 'apps/web/src/client.ts',
     })
   },
 })

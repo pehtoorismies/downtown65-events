@@ -1,29 +1,33 @@
 {
-  "name": "@downtown65-app/web",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
-  "license": "MIT",
-  "scripts": {
-    "find-deadcode": "ts-prune --ignore 'src/functions|src/appsync.gen.ts|src/test/global-setup.ts'",
-    "typecheck": "tsc --noEmit",
-    "test": "PINO_LOG_LEVEL=error sst bind vitest run",
-    "clean": "rm -rf dist .turbo node_modules"
-  },
-  "dependencies": {
-    "@downtown65-app/backend": "workspace:^",
-    "@trpc/client": "11.1.0",
-    "@trpc/server": "11.1.0",
-    "sst": "3.13.10"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "4.20250416.0",
-    "@downtown65-app/config-ts": "workspace:^",
-    "typescript": "5.8.3"
-  },
-  "engines": {
-    "npm": "please-use-yarn",
-    "yarn": ">= 4.7.0"
-  },
-  "packageManager": "yarn@4.7.0"
+	"name": "web",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "react-router build",
+		"cf-typegen": "wrangler types",
+		"deploy": "yarn run build && wrangler deploy",
+		"dev": "react-router dev",
+		"preview": "yarn run build && vite preview",
+		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
+	},
+	"dependencies": {
+		"isbot": "^5.1.17",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-router": "^7.5.0"
+	},
+	"devDependencies": {
+		"@cloudflare/vite-plugin": "^1.0.0",
+		"@cloudflare/workers-types": "^4.20250416.0",
+		"@react-router/dev": "^7.5.0",
+		"@tailwindcss/vite": "^4.0.0",
+		"@types/node": "^20",
+		"@types/react": "^19.0.1",
+		"@types/react-dom": "^19.0.1",
+		"tailwindcss": "^4.0.0",
+		"typescript": "^5.7.2",
+		"vite": "^6.2.1",
+		"vite-tsconfig-paths": "^5.1.4",
+		"wrangler": "^4.11.1"
+	}
 }
