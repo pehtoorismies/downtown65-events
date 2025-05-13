@@ -1,0 +1,22 @@
+packages:
+  - apps/*
+  - packages/*
+ignoredBuiltDependencies:
+  - scrypt
+  - secp256k1
+  - sha3
+  - sharp
+  - websocket
+  - workerd
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - '@tailwindcss/oxide'
+  - core-js
+  - esbuild
+  - keccak
+  - scrypt
+  - secp256k1
+  - sha3
+  - sharp
+  - websocket
+  - workerd

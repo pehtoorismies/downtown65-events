@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dt65-api",
+  "main": "src/app.ts",
+  "compatibility_date": "2025-05-08",
+  "observability": {
+    "enabled": true
+  },
+  "compatibility_flags": ["nodejs_compat"],
+  "env": {
+    "pehtoorismies": {
+      "routes": [
+        {
+          "pattern": "api-pehtoorismies.pehtoorismies.com",
+          "custom_domain": true
+        }
+      ],
+      "vars": {
+        "LOG_LEVEL": "info",
+        "AUTH0_CLIENT_ID": "JaoAht7ggce7f5R8DCBGUyjUJeMQEDtz",
+        "AUTH0_DOMAIN": "dev-dt65.eu.auth0.com"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "dt65-dev-pehtoorismies",
+          "database_id": "8be31f04-a359-428e-9c77-4db3b94a5bb1",
+          "migrations_dir": "drizzle/"
+        }
+      ]
+    }
+  }
+}
