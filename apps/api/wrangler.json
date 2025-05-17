@@ -1,0 +1,57 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dt65-api",
+  "main": "src/app.ts",
+  "compatibility_date": "2025-05-08",
+  "observability": {
+    "enabled": true
+  },
+  "compatibility_flags": ["nodejs_compat"],
+  "env": {
+    "pehtoorismies": {
+      "vars": {
+        "LOG_LEVEL": "info",
+        "AUTH0_CLIENT_ID": "JaoAht7ggce7f5R8DCBGUyjUJeMQEDtz",
+        "AUTH0_DOMAIN": "dev-dt65.eu.auth0.com"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "dt65-pehtoorismies",
+          "database_id": "785d419d-38ef-4342-a5e6-c525aedef452",
+          "migrations_dir": "drizzle/"
+        }
+      ]
+    },
+    "test": {
+      "vars": {
+        "LOG_LEVEL": "info",
+        "AUTH0_CLIENT_ID": "JaoAht7ggce7f5R8DCBGUyjUJeMQEDtz",
+        "AUTH0_DOMAIN": "dev-dt65.eu.auth0.com"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "dt65-test",
+          "database_id": "fc97044a-c30a-4288-ba0d-7c884daeea14",
+          "migrations_dir": "drizzle/"
+        }
+      ]
+    },
+    "production": {
+      "vars": {
+        "LOG_LEVEL": "info",
+        "AUTH0_CLIENT_ID": "uPu5NUyP1yaGw2IAC0B1KeCgbX3FaNzz",
+        "AUTH0_DOMAIN": "prod-dt65.eu.auth0.com"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "dt65-production",
+          "database_id": "d7d7ad95-f0f4-4c4d-9e4c-877c4fb191fa",
+          "migrations_dir": "drizzle/"
+        }
+      ]
+    }
+  }
+}
