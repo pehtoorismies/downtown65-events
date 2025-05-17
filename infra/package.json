@@ -1,0 +1,13 @@
+{
+    "name": "dt65-events",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "22",
+        "typescript": "5.8.3"
+    },
+    "dependencies": {
+        "@pulumi/cloudflare": "6.2.0",
+        "@pulumi/command": "1.0.5",
+        "@pulumi/pulumi": "3.170.0"
+    }
+}

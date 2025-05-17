@@ -1,0 +1,10 @@
+name: dt65-events
+description: Downtown65 Events
+runtime:
+  name: nodejs
+  options:
+    packagemanager: pnpm
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: typescript
