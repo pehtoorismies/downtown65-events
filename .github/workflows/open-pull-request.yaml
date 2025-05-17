@@ -11,17 +11,14 @@ on:
 concurrency:
   group: merge-${{ github.ref }}
 
-permissions:
-  id-token: write # This is required for requesting the JWT
-  contents: read # This is required for actions/checkout
-
 env:
   WRANGLER_ENV: pr-${{ github.event.pull_request.id }}
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    name: Deploy API
+    runs-on: ubuntu-22.04
+    environment: development
+    name: Deploy Downtown65 API
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -29,5 +26,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
       - name: Install dependencies
         run: pnpm install
+      - name: Deploy Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          workingDirectory: "apps/api"
+          environment: pr-${{ github.event.pull_request.id }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          preCommands: |
+            RESULT=$(./scripts/check-d1.sh dt65-pr-${{ github.event.pull_request.id }} pr-${{ github.event.pull_request.id }})
+            echo $RESULT
+          postCommands: |
+            echo "*** post commands ***"
+            echo "******"
