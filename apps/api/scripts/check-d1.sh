@@ -17,12 +17,14 @@ if [ -z "$WRANGLER_ENV" ]; then
 fi
 
 # Fetch the list of D1 databases
-DATABASE_LIST=$(npx wrangler d1 list)
+DATABASE_LIST=$(npx wrangler d1 info)
 
-# Check if the database exists in the list
-if echo "$DATABASE_LIST" | grep -q "$DATABASE_NAME"; then
-  echo "database already exists"
-else
-  echo "create a new D1 database $DATABASE_NAME"
- #  npx wrangler d1 create $DATABASE_NAME
+echo "RESOLVED TO $DATABASE_LIST"
+#
+## Check if the database exists in the list
+#if echo "$DATABASE_LIST" | grep -q "$DATABASE_NAME"; then
+#  echo "database already exists"
+#else
+#  echo "create a new D1 database $DATABASE_NAME"
+# #  npx wrangler d1 create $DATABASE_NAME
 fi
