@@ -37,8 +37,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           preCommands: |
-            RESULT=$(./scripts/check-d1.sh dt65-pr-${{ github.event.pull_request.id }} pr-${{ github.event.pull_request.id }})
-            echo $RESULT
+            node ./scripts/create-wrangler.js
+            echo 'DONE'
           postCommands: |
             echo "*** post commands ***"
-            echo "******"
+            echo "********  ***********"

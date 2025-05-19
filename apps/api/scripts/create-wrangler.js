@@ -1,3 +1,5 @@
 #!/usr/bin/node
 
-console.log('Creating wrangler...')
+const file = await import('wranger.jsonc', { with: { type: 'json' } })
+
+console.log(file)
