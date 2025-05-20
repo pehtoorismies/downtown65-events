@@ -47,8 +47,8 @@
       "d1_databases": [
         {
           "binding": "DB",
-          "database_name": "dt65-dev-pehtoorismies",
-          "database_id": "8be31f04-a359-428e-9c77-4db3b94a5bb1",
+          "database_name": "dt65-pehtoorismies",
+          "database_id": "785d419d-38ef-4342-a5e6-c525aedef452",
           "migrations_dir": "drizzle/"
         }
       ]
