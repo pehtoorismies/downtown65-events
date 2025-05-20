@@ -75,6 +75,9 @@ importers:
       '@downtown65-app/config-ts':
         specifier: workspace:^
         version: link:../../packages/config-ts
+      cross-spawn:
+        specifier: 7.0.6
+        version: 7.0.6
       dotenv:
         specifier: 16.5.0
         version: 16.5.0

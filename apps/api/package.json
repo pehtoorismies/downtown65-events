@@ -2,6 +2,7 @@
 	"name": "@downtown65-app/api",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --env $WRANGLER_DEV_ENV",
@@ -32,6 +33,7 @@
 		"@cloudflare/vitest-pool-workers": "0.8.28",
 		"@cloudflare/workers-types": "4.20250416.0",
 		"@downtown65-app/config-ts": "workspace:^",
+		"cross-spawn": "7.0.6",
 		"dotenv": "16.5.0",
 		"drizzle-kit": "0.31.1",
 		"typescript": "5.8.3",
