@@ -2,6 +2,7 @@
 	"name": "@downtown65-app/api",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --env $WRANGLER_DEV_ENV",
@@ -14,7 +15,6 @@
 		"@hono/zod-openapi": "0.19.6",
 		"@hono/zod-validator": "0.5.0",
 		"@scalar/hono-api-reference": "0.8.9",
-		"add": "2.0.6",
 		"auth0": "4.23.0",
 		"drizzle": "1.4.0",
 		"drizzle-orm": "0.43.1",
@@ -31,9 +31,9 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "0.8.28",
-		"@cloudflare/workers-types": "4.20250416.0",
 		"@downtown65-app/config-ts": "workspace:^",
-		"@types/add": "^2",
+		"@types/node": "^22.15.18",
+		"cross-spawn": "7.0.6",
 		"dotenv": "16.5.0",
 		"drizzle-kit": "0.31.1",
 		"typescript": "5.8.3",
