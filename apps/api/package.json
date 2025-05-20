@@ -31,8 +31,8 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "0.8.28",
-		"@cloudflare/workers-types": "4.20250416.0",
 		"@downtown65-app/config-ts": "workspace:^",
+		"@types/node": "^22.15.18",
 		"cross-spawn": "7.0.6",
 		"dotenv": "16.5.0",
 		"drizzle-kit": "0.31.1",

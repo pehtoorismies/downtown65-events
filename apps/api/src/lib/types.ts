@@ -1,14 +1,20 @@
 import type { OpenAPIHono, RouteConfig, RouteHandler } from '@hono/zod-openapi'
 import type { PinoLogger } from 'hono-pino'
 
+interface Binding {
+  DB: D1Database
+}
+interface Secret {
+  AUTH0_CLIENT_SECRET: string
+}
+
+/**
+ * Env: automatically created by "wrangler types"
+ * Binding: add your own bindings here
+ * Secret: add your own secrets here
+ */
 export interface AppBindings {
-  Bindings: {
-    DB: D1Database
-    LOG_LEVEL: string
-    AUTH0_CLIENT_ID: string
-    AUTH0_DOMAIN: string
-    AUTH0_CLIENT_SECRET: string
-  }
+  Bindings: Env & Binding & Secret
   Variables: {
     logger: PinoLogger
   }
