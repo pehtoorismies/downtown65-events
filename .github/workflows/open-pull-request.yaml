@@ -38,6 +38,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           preCommands: |
             wrangler d1 migrations apply dt65-${{ env.WRANGLER_ENV }} -e ${{ env.WRANGLER_ENV }}
-#          command: versions upload
+          command: versions upload
           postCommands: |
             echo "*** post commands ***"
