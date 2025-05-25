@@ -15,10 +15,10 @@ env:
   WRANGLER_ENV: ${{ github.actor }}
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
     environment: development
-    name: Deploy Downtown65 API
+    name: Setup
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -29,24 +29,16 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Deploy API
-        working-directory: apps/api
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          npx wrangler d1 migrations apply dt65-${{ env.WRANGLER_ENV }} -e ${{ env.WRANGLER_ENV }}
-          npx wrangler deploy -e ${{ env.WRANGLER_ENV }}
+      - name: Lint
+        run: pnpm run lint:ci
+      - name: Version check
+        run:  pnpm run version-check
 
-#      - name: Deploy Cloudflare
-#        uses: cloudflare/wrangler-action@v3
-#        with:
-#          workingDirectory: "apps/api"
-#          environment: ${{ env.WRANGLER_ENV }}
-#          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-#          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-#          preCommands: |
-#            wrangler d1 migrations apply dt65-${{ env.WRANGLER_ENV }} -e ${{ env.WRANGLER_ENV }}
-#          command: versions upload
-#          postCommands: |
-#            wrangler d1 migrations apply dt65-${{ env.WRANGLER_ENV }} -
+#      - name: Deploy API
+#        working-directory: apps/api
+#        env:
+#          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+#          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+#        run: |
+#          npx wrangler d1 migrations apply dt65-${{ env.WRANGLER_ENV }} -e ${{ env.WRANGLER_ENV }}
+#          npx wrangler deploy -e ${{ env.WRANGLER_ENV }}
