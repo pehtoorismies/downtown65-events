@@ -14,6 +14,9 @@ importers:
       '@cloudflare/workers-types':
         specifier: 4.20250414.0
         version: 4.20250414.0
+      sherif:
+        specifier: 1.5.0
+        version: 1.5.0
 
   apps/api:
     dependencies:
@@ -3715,6 +3718,40 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+
+  sherif-darwin-arm64@1.5.0:
+    resolution: {integrity: sha512-4BYYCEXVJ8+xqfnntxnyGcwgByjrHSeKOitPYdBPMB3aauptC4GUMeVqXRXf5JNbx3lRKg8bZdoq0QPnbsr6BQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  sherif-darwin-x64@1.5.0:
+    resolution: {integrity: sha512-Y8wkqXzpZt2D5n0KnEXKK1QosoPofDpx4IDzxjyVjGvhR4YBoKcyU93tY9mEyYXMlzQGlyezGHpZkFeP0bioDA==}
+    cpu: [x64]
+    os: [darwin]
+
+  sherif-linux-arm64@1.5.0:
+    resolution: {integrity: sha512-l4JBoYCD+mJkwxNuQhLXloySXqSNOdTwJ9euBw8GbRjW+iXK2LxFOya1SlZy8CXZngTOBpNNoO9jH4E9NgI0XA==}
+    cpu: [arm64]
+    os: [linux]
+
+  sherif-linux-x64@1.5.0:
+    resolution: {integrity: sha512-RaSRnYe58Y6yLTeE8Hw5xmEDn7ted1F4kT1FFSR+ola36R5lnCeWV+xZqjKWU7JE8fVSqApJ4EL0mwtwGZT98Q==}
+    cpu: [x64]
+    os: [linux]
+
+  sherif-windows-arm64@1.5.0:
+    resolution: {integrity: sha512-xcOnhsCTcg0fg1/SYhFN4AErk1k8QfW4sRK8ziaEt/SDtUGIYmt/+3CsWCBIGoMSaURS8upcU2JtofI3P82qHQ==}
+    cpu: [arm64]
+    os: [win32]
+
+  sherif-windows-x64@1.5.0:
+    resolution: {integrity: sha512-kWFctc7kEgYq9IoTFWVGQdZv725eMOwhkF3JpkuApMLF/K+pDb1JKHUbmU52nHdMMKpT3SDVqrHyCaUOKmxU5w==}
+    cpu: [x64]
+    os: [win32]
+
+  sherif@1.5.0:
+    resolution: {integrity: sha512-sCn0w5b3APLRJauj4UDaK5TV5fyuc1ndDGv2cgt0lnb7zVUAekFm6D2duHVg4sf8/ZlDGFcLRc9Y/DxSRXdOAA==}
+    hasBin: true
 
   shimmer@1.2.1:
     resolution: {integrity: sha512-sQTKC1Re/rM6XyFM6fIAGHRPVGvyXfgzIDvzoq608vM+jeyVD0Tu1E6Np0Kc2zAIFWIj963V2800iF/9LPieQw==}
@@ -8507,6 +8544,33 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
+
+  sherif-darwin-arm64@1.5.0:
+    optional: true
+
+  sherif-darwin-x64@1.5.0:
+    optional: true
+
+  sherif-linux-arm64@1.5.0:
+    optional: true
+
+  sherif-linux-x64@1.5.0:
+    optional: true
+
+  sherif-windows-arm64@1.5.0:
+    optional: true
+
+  sherif-windows-x64@1.5.0:
+    optional: true
+
+  sherif@1.5.0:
+    optionalDependencies:
+      sherif-darwin-arm64: 1.5.0
+      sherif-darwin-x64: 1.5.0
+      sherif-linux-arm64: 1.5.0
+      sherif-linux-x64: 1.5.0
+      sherif-windows-arm64: 1.5.0
+      sherif-windows-x64: 1.5.0
 
   shimmer@1.2.1: {}
 
