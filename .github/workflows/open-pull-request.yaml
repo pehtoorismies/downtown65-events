@@ -33,6 +33,8 @@ jobs:
         run: pnpm run lint:ci
       - name: Version check
         run:  pnpm run version-check
+      - name: Typecheck
+        run: pnpm run typecheck
 
 #      - name: Deploy API
 #        working-directory: apps/api
