@@ -1,9 +1,9 @@
-import { pinoLogger as honoPinoLogger } from 'hono-pino'
+import { createMiddleware } from 'hono/factory'
 import pino from 'pino'
-import pretty from 'pino-pretty'
 
-export const pinoLogger = () => {
-  return honoPinoLogger({
-    pino: pino({ level: 'debug' }, pretty()),
-  })
-}
+const logger = pino()
+
+export const pinoLogger = createMiddleware(async (c, next) => {
+  c.set('logger', logger)
+  await next()
+})
