@@ -35,6 +35,8 @@ jobs:
         run:  pnpm run version-check
       - name: Typecheck
         run: pnpm run typecheck
+      - name: Unit test
+        run: pnpm run test
 
 #      - name: Deploy API
 #        working-directory: apps/api

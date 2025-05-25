@@ -6,8 +6,8 @@
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --env $WRANGLER_DEV_ENV",
-		"start": "wrangler dev",
-		"test": "vitest",
+		"test:dev": "vitest",
+		"test": "vitest run",
 		"cf-typegen": "wrangler types",
 		"typecheck": "tsc --noEmit",
 		"db:generate-schema": "drizzle-kit generate --out-dir=./src/db/schema.ts",
