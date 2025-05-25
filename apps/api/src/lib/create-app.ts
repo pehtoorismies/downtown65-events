@@ -1,10 +1,10 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
+import { logger } from 'hono/logger'
 import { requestId } from 'hono/request-id'
 import notFound from 'stoker/middlewares/not-found'
 import onError from 'stoker/middlewares/on-error'
 import { defaultHook } from 'stoker/openapi'
 import type { AppBindings, AppOpenAPI } from '~/lib/types'
-// import { apiKeyMiddleware } from '~/middleware/api-key'
 import { pinoLogger } from '~/middleware/pino-logger'
 
 export const createRouter = () => {
@@ -17,7 +17,8 @@ export const createRouter = () => {
 export const createApp = () => {
   const app = createRouter()
   app.use(requestId())
-  app.use(pinoLogger())
+  app.use(pinoLogger)
+  app.use(logger())
   // app.use(apiKeyMiddleware('Kissa'))
   app.notFound(notFound)
   app.onError(onError)

@@ -2,7 +2,7 @@
 
 import fs from 'node:fs'
 
-const d = await import('../wrangler.json', {
+const d = await import('../wrangler.jsonc', {
   with: { type: 'json' },
 })
 

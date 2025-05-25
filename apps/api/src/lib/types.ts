@@ -4,9 +4,6 @@ import type { PinoLogger } from 'hono-pino'
 interface Binding {
   DB: D1Database
 }
-interface Secret {
-  AUTH0_CLIENT_SECRET: string
-}
 
 /**
  * Env: automatically created by "wrangler types"
@@ -14,7 +11,7 @@ interface Secret {
  * Secret: add your own secrets here
  */
 export interface AppBindings {
-  Bindings: Env & Binding & Secret
+  Bindings: Env & Binding
   Variables: {
     logger: PinoLogger
   }

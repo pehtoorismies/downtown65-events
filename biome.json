@@ -17,7 +17,9 @@
       "**/generated/**",
       "**/build/**",
       "**/.cache/**",
-      ".pnp.*"
+      ".pnp.*",
+      "worker-configuration.d.ts",
+      "**/drizzle/meta/*"
     ]
   },
   "formatter": {

@@ -9,5 +9,10 @@
     "types": ["@types/node"]
   },
   "exclude": ["test", "build", "node_modules", "dist"],
-  "include": ["worker-configuration.d.ts", "src/**/*.ts"]
+  "include": [
+    "worker-configuration.d.ts",
+    "src/**/*.ts",
+    "src/**/*.test.ts",
+    "vitest.config.mts"
+  ]
 }

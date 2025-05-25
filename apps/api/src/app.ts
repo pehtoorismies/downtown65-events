@@ -1,3 +1,4 @@
+import { WorkerEntrypoint } from 'cloudflare:workers'
 import { Scalar } from '@scalar/hono-api-reference'
 import { configureOpenAPI } from '~/lib/configure-open-api'
 import { createApp } from '~/lib/create-app'
@@ -29,4 +30,12 @@ app.get(
   }),
 )
 
-export default app
+// HACK for unit testing
+export default class extends WorkerEntrypoint {
+  fetch(request: Request) {
+    // @ts-ignore
+    return app.fetch(request, this.env, this.ctx)
+  }
+}
+
+// export default app

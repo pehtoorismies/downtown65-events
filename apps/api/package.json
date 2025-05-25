@@ -9,7 +9,9 @@
 		"start": "wrangler dev",
 		"test": "vitest",
 		"cf-typegen": "wrangler types",
-		"db:generate-schema": "drizzle-kit generate --out-dir=./src/db/schema.ts"
+		"typecheck": "tsc --noEmit",
+		"db:generate-schema": "drizzle-kit generate --out-dir=./src/db/schema.ts",
+		"clean": "rm -rf dist .turbo node_modules"
 	},
 	"dependencies": {
 		"@hono/zod-openapi": "0.19.6",
@@ -26,17 +28,20 @@
 		"pino-pretty": "13.0.0",
 		"stoker": "1.4.2",
 		"ulid": "3.0.0",
+		"winston": "^3.17.0",
 		"zod": "3.24.4",
 		"zod-openapi": "4.2.4"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "0.8.28",
+		"@cloudflare/vitest-pool-workers": "0.8.31",
 		"@downtown65-app/config-ts": "workspace:^",
-		"@types/node": "^22.15.18",
+		"@types/node": "22.15.18",
+		"chai": "5.2.0",
 		"cross-spawn": "7.0.6",
 		"dotenv": "16.5.0",
 		"drizzle-kit": "0.31.1",
 		"typescript": "5.8.3",
+		"vite-tsconfig-paths": "5.1.4",
 		"vitest": "3.1.3",
 		"wrangler": "4.15.2"
 	},
